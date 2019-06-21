@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drawable_package_container"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPreview"/>
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/tvpkgName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pkgName"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/pkgDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pkgDesc"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/pkgDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pkgDuration"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/pkgBasePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pkgBasePrice"/>
+
+    <Button
+        android:id="@+id/btnBookNow"
+        android:layout_gravity="right"
+        android:text="Book now!"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:background="@color/colorYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

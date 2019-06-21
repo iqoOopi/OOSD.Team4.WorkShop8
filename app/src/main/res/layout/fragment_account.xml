@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/ic_edit_black_24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivEditCustomer"/>
+    <ImageView
+        android:layout_toRightOf="@id/ivEditCustomer"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/ivSaveCustomer"
+        android:src="@drawable/ic_save_black_24dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/llAGENTID"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/container_gray"
+        android:padding="10dp">
+
+    <TextView
+        android:paddingRight="10dp"
+        android:text="Your agent:"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="AGTID"
+        android:id="@+id/tvAgentId"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/llAGENTID"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rlNAME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_blue">
+    <TextView
+        android:textSize="15dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/tvNAME_LABEL"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvNAME_LABEL"
+        android:id="@+id/etCustFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:paddingTop="15dp"
+        android:id="@+id/etCustLastName"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/etCustFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:padding="20dp"
+        android:id="@+id/rlCONTACT"
+        android:layout_below="@id/rlNAME"
+        android:background="@drawable/container_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:textSize="15dp"
+        android:text="CONTACT"
+        android:id="@+id/tvCONTACT_LABEL"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:hint="Email address"
+        android:layout_below="@id/tvCONTACT_LABEL"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/etCustEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/etCustBusPhone"
+        android:text="Work #:"
+        android:id="@+id/tvBUSPHONE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textColor="@android:color/white"
+        android:paddingTop="20dp"
+        android:id="@id/etCustBusPhone"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/etCustEmail"
+        android:minEms="11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+
+    <TextView
+        android:textColor="@android:color/white"
+        android:text="Home #:"
+        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/etCustHomePhone"
+        android:id="@+id/tvHOMEPHONE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textColor="@android:color/white"
+        android:layout_below="@id/etCustBusPhone"
+        android:paddingTop="15dp"
+        android:layout_alignParentRight="true"
+        android:id="@id/etCustHomePhone"
+        android:minEms="11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+
+        </RelativeLayout>
+
+    <!--ADDRESS-->
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:padding="20dp"
+        android:id="@+id/rlADDRESS"
+        android:layout_below="@id/rlCONTACT"
+        android:background="@drawable/container_red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvADDRESS_LABEL"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="20dp"
+        android:text="ADDRESS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:paddingTop="20dp"
+        android:hint="Street address"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etCustAddress"
+        android:layout_below="@id/tvADDRESS_LABEL"
+        android:layout_centerHorizontal="true"
+        android:enabled="false"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:layout_below="@id/etCustAddress"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:id="@+id/etCustCity"
+        android:hint="City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:id="@+id/etCustProv"
+        android:layout_below="@id/etCustCity"
+        android:paddingTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Prov./State Code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:layout_below="@id/etCustProv"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:hint="Postal/ZIP"
+        android:id="@+id/etCustPostal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+    <EditText
+        android:textColor="@android:color/white"
+        android:layout_below="@id/etCustPostal"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:hint="Country"
+        android:id="@+id/etCustCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"/>
+        </RelativeLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:textSize="25dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/container_purple"
+        android:layout_below="@id/rlADDRESS"
+        android:layout_alignParentRight="true"
+        android:text="TAP HERE TO CONNECT TO AGENT"
+        android:id="@+id/tvTapForAgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</ScrollView>
