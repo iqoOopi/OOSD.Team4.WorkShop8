@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.erict135.oosdteam4workshop8.model.Booking;
 import com.erict135.oosdteam4workshop8.model.Customer;
+import com.erict135.oosdteam4workshop8.model.Package;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -73,6 +74,7 @@ public class CreateBookingFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_create_booking, container, false);
 
         bookPkg = getArguments().getParcelable("package");
+
         customerid=getArguments().getInt("customerid");
 
         ivPreviewConfirmBooking=(ImageView)view.findViewById(R.id.ivPreviewConfirmBooking);

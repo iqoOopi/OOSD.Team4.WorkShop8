@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.erict135.oosdteam4workshop8.model.Customer;
+import com.erict135.oosdteam4workshop8.model.Package;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

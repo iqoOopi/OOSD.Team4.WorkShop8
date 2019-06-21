@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 public class MainActivity extends Activity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     private final int VACATIONRADIUSKM = 200;
@@ -158,7 +160,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                 ivImage.setImageAlpha(60);
                 ivImage.setBackgroundColor(Color.argb(0,0,0,0));
 
-                Glide.with(getBaseContext()).load(fileUri).fitCenter().crossFade(3000).into(ivImage);
+                Glide.with(getBaseContext()).load(fileUri).fitCenter().transition(withCrossFade(3000)).into(ivImage);
 
                 animFadeOut = new AlphaAnimation(0.24f,0);
                 animFadeOut.setDuration(1000);

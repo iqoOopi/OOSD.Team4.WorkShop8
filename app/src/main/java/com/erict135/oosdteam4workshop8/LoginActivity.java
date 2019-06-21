@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
+import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
 
 

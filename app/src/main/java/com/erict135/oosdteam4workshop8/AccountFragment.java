@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.erict135.oosdteam4workshop8.model.Customer;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

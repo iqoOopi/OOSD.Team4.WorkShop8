@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.myapps.a740657.travelexpertscustomer.R;
+import com.erict135.oosdteam4workshop8.R;
+
+//import com.myapps.a740657.travelexpertscustomer.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 

@@ -6,9 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.myapps.a740657.travelexpertscustomer.R;
-import com.myapps.a740657.travelexpertscustomer.model.BookingWPackageDetails;
-import com.myapps.a740657.travelexpertscustomer.model.ViewHolder;
+import com.erict135.oosdteam4workshop8.R;
+import com.erict135.oosdteam4workshop8.model.BookingWPackageDetails;
+import com.erict135.oosdteam4workshop8.model.ViewHolder;
+//import com.myapps.a740657.travelexpertscustomer.R;
+//import com.myapps.a740657.travelexpertscustomer.model.BookingWPackageDetails;
+//import com.myapps.a740657.travelexpertscustomer.model.ViewHolder;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
