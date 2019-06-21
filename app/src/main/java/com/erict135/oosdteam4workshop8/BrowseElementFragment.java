@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.erict135.oosdteam4workshop8.model.Customer;
-
+import com.erict135.oosdteam4workshop8.model.Package;
 import java.text.NumberFormat;
 
 public class BrowseElementFragment extends Fragment {

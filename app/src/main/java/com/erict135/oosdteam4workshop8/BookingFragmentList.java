@@ -120,7 +120,7 @@ public class BookingFragmentList extends Fragment {
             if(bookingsWdetails==null){
                 bookingsWdetails=new ArrayList<>();
             }
-            RecyclerViewAdapter adapter = new RecyclerViewAdapter(bookingsWdetails,getContext());
+            RecyclerViewAdapter adapter = new RecyclerViewAdapter(bookingsWdetails, getContext());
             adapter.setHasStableIds(true);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
