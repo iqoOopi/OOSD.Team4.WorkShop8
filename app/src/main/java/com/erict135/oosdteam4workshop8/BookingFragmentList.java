@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.erict135.oosdteam4workshop8.adapters.RecyclerViewAdapter;
+import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
+import com.erict135.oosdteam4workshop8.model.BookingWPackageDetails;
+import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.myapps.a740657.travelexpertscustomer.adapters.RecyclerViewAdapter;
-import com.myapps.a740657.travelexpertscustomer.configurationset.ConfigurationSet;
-import com.myapps.a740657.travelexpertscustomer.model.BookingWPackageDetails;
-import com.myapps.a740657.travelexpertscustomer.model.Customer;
 
 import java.io.BufferedReader;
 import java.io.IOException;

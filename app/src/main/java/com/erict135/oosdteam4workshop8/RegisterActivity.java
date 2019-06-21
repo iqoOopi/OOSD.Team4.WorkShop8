@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
+import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.myapps.a740657.travelexpertscustomer.configurationset.ConfigurationSet;
-import com.myapps.a740657.travelexpertscustomer.model.Customer;
+
 
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;

@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.myapps.a740657.travelexpertscustomer.model.Customer;
+import com.erict135.oosdteam4workshop8.model.Customer;
+
 
 public class HomeFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";

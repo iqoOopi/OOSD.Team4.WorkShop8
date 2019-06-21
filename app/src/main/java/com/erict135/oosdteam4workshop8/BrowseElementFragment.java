@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.myapps.a740657.travelexpertscustomer.model.Customer;
+import com.erict135.oosdteam4workshop8.model.Customer;
 
 import java.text.NumberFormat;
 

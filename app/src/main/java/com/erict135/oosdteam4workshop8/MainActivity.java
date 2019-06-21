@@ -18,8 +18,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.erict135.oosdteam4workshop8.model.Coordinates;
+import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
-import com.myapps.a740657.travelexpertscustomer.model.*;
 
 import java.io.File;
 import java.io.IOException;

@@ -13,9 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.google.gson.Gson;
-import com.myapps.a740657.travelexpertscustomer.configurationset.ConfigurationSet;
-import com.myapps.a740657.travelexpertscustomer.model.Customer;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
