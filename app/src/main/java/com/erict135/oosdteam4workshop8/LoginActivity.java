@@ -8,9 +8,13 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
@@ -28,7 +32,8 @@ import java.net.URL;
 
 public class LoginActivity extends Activity {
 
-    private Button btnBrowse, btnLogin,btnRegister;
+    private Button btnLogin,btnRegister;
+    private TextView btnBrowse;
     private EditText etUsername, etPassword;
     private StringBuffer buffer;
     private String CustEmail, CustPassword;
@@ -38,10 +43,40 @@ public class LoginActivity extends Activity {
 
     private final String LOGINURL = ConfigurationSet.getRESTCustomerLoginUrl();
 
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) activity.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(
+                activity.getCurrentFocus().getWindowToken(), 0);
+    }
+
+    public void setupUI(View view) {
+
+        // Set up touch listener for non-text box views to hide keyboard.
+        if (!(view instanceof EditText)) {
+            view.setOnTouchListener(new View.OnTouchListener() {
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard(LoginActivity.this);
+                    return false;
+                }
+            });
+        }
+
+        //If a layout container, iterate over children and seed recursion.
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                View innerView = ((ViewGroup) view).getChildAt(i);
+                setupUI(innerView);
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setupUI(findViewById(R.id.login_activity));
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 
@@ -59,7 +94,7 @@ public class LoginActivity extends Activity {
             }
         });
 
-        btnBrowse = (Button) findViewById(R.id.btnBrowse);
+        btnBrowse = (TextView) findViewById(R.id.btnBrowse);
         btnBrowse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

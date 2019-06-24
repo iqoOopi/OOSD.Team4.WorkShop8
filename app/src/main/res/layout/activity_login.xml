@@ -1,127 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.myapps.a740657.travelexpertscustomer.LoginActivity"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@drawable/container_background_main"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:id="@+id/svLogin">
+    android:layout_height="match_parent"
+    android:id="@+id/login_activity"
+    android:background="@drawable/login_bg_img">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/travelexperts_logo_white" />
+
     <RelativeLayout
-        android:id="@+id/rlLoginMain"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_alignParentTop="true"
-        android:text="Travel Experts"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:background="@drawable/container_blue"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:layout_below="@id/tvTitle"
-        android:layout_alignParentRight="true"
-        android:textColor="@android:color/white"
-        android:text="Register!"
-        android:background="@drawable/container_red"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-        <RelativeLayout
-            android:layout_alignParentLeft="true"
-            android:layout_below="@id/btnRegister"
-            android:id="@+id/rlLogin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:id="@+id/tvUsername"
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email: "
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"/>
-
-            <EditText
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_below="@id/tvUsername"
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email@email.com"
-                android:inputType="textEmailAddress"
-                android:maxLines="1" />
-
-            <TextView
-                android:paddingTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:paddingBottom="10dp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:layout_below="@id/etUsername"
-                android:layout_alignParentLeft="true"
-                android:id="@+id/tvPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password: " />
-
-            <EditText
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/tvPassword"
-                android:textColor="@android:color/holo_blue_dark"
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:maxLines="1" />
-        </RelativeLayout>
-    <Button
-        android:background="@drawable/container_button_main"
-        android:layout_below="@id/rlLogin"
-        android:id="@+id/btnBrowse"
-        android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
+        android:id="@+id/rlLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No thanks, I'd like to browse"
-        android:layout_marginTop="40dp"
-        android:padding="30dp"/>
-        <Button
-            android:textColor="@android:color/white"
-            android:background="@drawable/container_button_main"
-            android:layout_below="@id/btnBrowse"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/btnLogin"
+        android:layout_below="@id/btnRegister"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:text="Email: "
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:padding="30dp"
-            android:text="Login" />
+            android:layout_below="@id/tvUsername"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#fff"
+            android:hint="Email@email.com"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minHeight="45dp"
+            android:paddingLeft="20dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etUsername"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:text="Password: "
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#fff"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:minHeight="45dp"
+            android:paddingLeft="20dp"
+            android:password="true"
+            android:textColor="#000000" />
+
     </RelativeLayout>
-</ScrollView>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
+        android:background="#64EB66"
+        android:text="@string/title_login" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#71EAFF"
+        android:text="Register" />
+
+    <TextView
+        android:id="@+id/btnBrowse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:paddingRight="40dp"
+        android:text="Just Browse Without Registration"
+        android:textAlignment="viewEnd"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

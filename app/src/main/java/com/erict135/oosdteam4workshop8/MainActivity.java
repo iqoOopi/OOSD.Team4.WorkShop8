@@ -12,7 +12,12 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.widget.DrawerLayout;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -70,6 +75,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
         loggedin = getIntent().getBooleanExtra("loggedin",false);
 
         setContentView(R.layout.activity_main);
+
 
         mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -132,7 +138,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
 //        handler2.postDelayed(runnable2,0);
     }
     private void loadImages(){
-        container = (FrameLayout) findViewById(R.id.container);
+        container = (FrameLayout) findViewById(R.id.fragment_container);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -285,7 +291,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                 case 0:
                     try {
                         fragmentManager.beginTransaction()
-                                .replace(R.id.container, HomeFragment.newInstance(position + 1,c))
+                                .replace(R.id.fragment_container, HomeFragment.newInstance(position + 1,c))
                                 .commit();
                     }catch (IllegalStateException ex){
                         ///
@@ -296,7 +302,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                 case 1:
                     try {
                         fragmentManager.beginTransaction()
-                                .replace(R.id.container, BrowseFragment.newInstance(position + 1, c))
+                                .replace(R.id.fragment_container, BrowseFragment.newInstance(position + 1, c))
                                 .commit();
                     }catch (IllegalStateException ex){
                         ///
@@ -307,7 +313,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                 case 2:
                     try {
                         fragmentManager.beginTransaction()
-                                .replace(R.id.container, BookingFragmentList.newInstance(position + 1, c))
+                                .replace(R.id.fragment_container, BookingFragmentList.newInstance(position + 1, c))
                                 .commit();
                     }catch (IllegalStateException ex){
                         ///
@@ -318,7 +324,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                 case 3:
                     try {
                         fragmentManager.beginTransaction()
-                                .replace(R.id.container, AccountFragment.newInstance(position + 1,c))
+                                .replace(R.id.fragment_container, AccountFragment.newInstance(position + 1,c))
                                 .commit();
                     }catch (IllegalStateException ex){
                         ///
@@ -336,7 +342,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                     break;
                 default:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, HomeFragment.newInstance(position + 1,c))
+                            .replace(R.id.fragment_container, HomeFragment.newInstance(position + 1,c))
                             .commit();
                     break;
             }
@@ -344,12 +350,12 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
             switch (position){
                 case 0:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, HomeFragment.newInstance(position + 1,c))
+                            .replace(R.id.fragment_container, HomeFragment.newInstance(position + 1,c))
                             .commit();
                     break;
                 case 1:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, BrowseFragment.newInstance(position + 1,c))
+                            .replace(R.id.fragment_container, BrowseFragment.newInstance(position + 1,c))
                             .commit();
                     break;
                 case 2:
@@ -358,7 +364,7 @@ public class MainActivity extends Activity implements NavigationDrawerFragment.N
                     break;
                 default:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, HomeFragment.newInstance(position + 1,c))
+                            .replace(R.id.fragment_container, HomeFragment.newInstance(position + 1,c))
                             .commit();
                     break;
             }
