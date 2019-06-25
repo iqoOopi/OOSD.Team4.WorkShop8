@@ -85,7 +85,7 @@ public class RegisterActivity extends Activity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Validate()){
+                //if(Validate()){
                     Customer c = new Customer();
 
                     c.setCustomerId(0);
@@ -105,7 +105,7 @@ public class RegisterActivity extends Activity {
                     c.setAgentId(0);
 
                     new RegisterCustomer(c).execute();
-                }
+                //}
             }
         });
 
@@ -135,9 +135,10 @@ public class RegisterActivity extends Activity {
                 Type type = new TypeToken<Customer>(){}.getType();
                 String JSONout = new Gson().toJson(c,type);
 
-                URL url = new URL(CUSTOMERREGISTERURL);
+                //URL url = new URL(CUSTOMERREGISTERURL);
+                URL url = new URL("http:10.163.112.8:8080/Team4API/rest/customers/putcustomer");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("POST");
+                urlConnection.setRequestMethod("PUT");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
                 urlConnection.setConnectTimeout(10000);
                 urlConnection.connect();
