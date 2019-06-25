@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,7 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        setupUI(findViewById(R.id.register_activity));
+        //setupUI(findViewById(R.id.register_activity));
 
         etCustFirstName=(EditText)findViewById(R.id.etCustFirstName);
         etCustLastName=(EditText)findViewById(R.id.etCustLastName);
@@ -86,6 +87,8 @@ public class RegisterActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //if(Validate()){
+                    System.out.println("btnSignup clicked");
+                    Log.i("RegisterActivity", "btnSignup clicked");
                     Customer c = new Customer();
 
                     c.setCustomerId(0);
@@ -102,7 +105,7 @@ public class RegisterActivity extends Activity {
                     c.setCustEmail(etCustEmail.getText().toString());
                     c.setPassword(etCustPassword.getText().toString());
                     c.setUserName(etCustEmail.getText().toString());
-                    c.setAgentId(0);
+                    c.setAgentId(1);
 
                     new RegisterCustomer(c).execute();
                 //}
