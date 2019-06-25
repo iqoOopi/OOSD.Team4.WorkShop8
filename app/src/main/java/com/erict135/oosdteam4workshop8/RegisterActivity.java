@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 
@@ -63,7 +66,7 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        setupUI(findViewById(R.id.register_activity));
+        //setupUI(findViewById(R.id.register_activity));
 
         etCustFirstName=(EditText)findViewById(R.id.etCustFirstName);
         etCustLastName=(EditText)findViewById(R.id.etCustLastName);
@@ -85,8 +88,12 @@ public class RegisterActivity extends Activity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Validate()){
+                //if(Validate()){
+                    System.out.println("btnSignup clicked");
+                    Log.i("RegisterActivity", "btnSignup clicked");
                     Customer c = new Customer();
+
+                    c.setCustomerId(0); // zero-value provided for a customer create
                     c.setCustFirstName(etCustFirstName.getText().toString());
                     c.setCustLastName(etCustLastName.getText().toString());
                     c.setCustAddress(etCustAddress.getText().toString());
@@ -98,10 +105,12 @@ public class RegisterActivity extends Activity {
                     c.setCustBusPhone(etCustBusPhone.getText().toString());
 
                     c.setCustEmail(etCustEmail.getText().toString());
-                    c.setCustPassword(etCustPassword.getText().toString());
+                    c.setPassword(etCustPassword.getText().toString());
+                    c.setUserName(etCustEmail.getText().toString());
+                    c.setAgentId(null); // negative value flags REST Service to handle as a null value
 
                     new RegisterCustomer(c).execute();
-                }
+                //}
             }
         });
 
@@ -119,6 +128,7 @@ public class RegisterActivity extends Activity {
         if(etCustEmail.getText().toString()==etEmailConfirm.getText().toString()){return false;}
         return true;
     }
+
     class RegisterCustomer extends AsyncTask<Void, Void, Void> {
         private Customer c;
         private int responsecode;
@@ -129,17 +139,30 @@ public class RegisterActivity extends Activity {
         protected Void doInBackground(Void... params) {
             try {
                 Type type = new TypeToken<Customer>(){}.getType();
-                String JSONout = new Gson().toJson(c,type);
 
-                URL url = new URL(CUSTOMERREGISTERURL);
+                // test the following GsonBuilder code to permit null transport
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                gsonBuilder.serializeNulls();
+                Gson gson = gsonBuilder.create();
+
+                //String JSONout = new Gson().toJson(c,type);
+                String JSONout = gson.toJson(c,type);
+
+                JsonObject convertedObject = new Gson().fromJson(JSONout, JsonObject.class);
+                convertedObject.remove("TOKEN");
+
+                String JSONout2 = convertedObject.toString();
+
+                //URL url = new URL(CUSTOMERREGISTERURL);
+                URL url = new URL("http:10.163.112.8:8080/Team4API/rest/customers/putcustomer");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("POST");
+                urlConnection.setRequestMethod("PUT");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
                 urlConnection.setConnectTimeout(10000);
                 urlConnection.connect();
 
                 OutputStreamWriter out = new OutputStreamWriter(urlConnection.getOutputStream());
-                out.write(JSONout);
+                out.write(JSONout2);
                 out.close();
 
                 responsecode = urlConnection.getResponseCode();
