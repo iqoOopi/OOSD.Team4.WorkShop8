@@ -43,40 +43,40 @@ public class LoginActivity extends Activity {
 
     private final String LOGINURL = ConfigurationSet.getRESTCustomerLoginUrl();
 
-    public static void hideSoftKeyboard(Activity activity) {
-        InputMethodManager inputMethodManager =
-                (InputMethodManager) activity.getSystemService(
-                        Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(
-                activity.getCurrentFocus().getWindowToken(), 0);
-    }
-
-    public void setupUI(View view) {
-
-        // Set up touch listener for non-text box views to hide keyboard.
-        if (!(view instanceof EditText)) {
-            view.setOnTouchListener(new View.OnTouchListener() {
-                public boolean onTouch(View v, MotionEvent event) {
-                    hideSoftKeyboard(LoginActivity.this);
-                    return false;
-                }
-            });
-        }
-
-        //If a layout container, iterate over children and seed recursion.
-        if (view instanceof ViewGroup) {
-            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-                View innerView = ((ViewGroup) view).getChildAt(i);
-                setupUI(innerView);
-            }
-        }
-    }
+//    public static void hideSoftKeyboard(Activity activity) {
+//        InputMethodManager inputMethodManager =
+//                (InputMethodManager) activity.getSystemService(
+//                        Activity.INPUT_METHOD_SERVICE);
+//        inputMethodManager.hideSoftInputFromWindow(
+//                activity.getCurrentFocus().getWindowToken(), 0);
+//    }
+//
+//    public void setupUI(View view) {
+//
+//        // Set up touch listener for non-text box views to hide keyboard.
+//        if (!(view instanceof EditText)) {
+//            view.setOnTouchListener(new View.OnTouchListener() {
+//                public boolean onTouch(View v, MotionEvent event) {
+//                    hideSoftKeyboard(LoginActivity.this);
+//                    return false;
+//                }
+//            });
+//        }
+//
+//        //If a layout container, iterate over children and seed recursion.
+//        if (view instanceof ViewGroup) {
+//            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+//                View innerView = ((ViewGroup) view).getChildAt(i);
+//                setupUI(innerView);
+//            }
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setupUI(findViewById(R.id.login_activity));
+        //setupUI(findViewById(R.id.login_activity));
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
 

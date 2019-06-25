@@ -94,7 +94,7 @@ public class BrowseElementFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container,CreateBookingFragment.newInstance(pkg,customerid,context,customer))
+                        .replace(R.id.container_browse,CreateBookingFragment.newInstance(pkg,customerid,context,customer))
                         .commit();
             }
         });

@@ -192,7 +192,7 @@ public class CreateBookingFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, BrowseFragment.getInstance())
+                        .replace(R.id.container_browse, BrowseFragment.getInstance())
                         .commit();
             }
         });
@@ -239,7 +239,7 @@ public class CreateBookingFragment extends Fragment {
                 Toast.makeText(getContext(),"You've booked your trip!", Toast.LENGTH_SHORT).show();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container,HomeFragment.newInstance(customerid,customer))
+                        .replace(R.id.container_browse,HomeFragment.newInstance(customerid,customer))
                         .commit();
             }
         }

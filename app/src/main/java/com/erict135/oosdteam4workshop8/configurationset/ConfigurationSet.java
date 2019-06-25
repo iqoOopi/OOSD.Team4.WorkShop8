@@ -2,10 +2,11 @@ package com.erict135.oosdteam4workshop8.configurationset;
 
 public class ConfigurationSet {
     private static final String HTTP = "http://";
-    private static final String IP = "10.163.112.8";
+    private static final String IP = "10.163.112.148";
     private static final String RESTUrl = ":8080/Team4API/rest";
 
     private static final String CustomerBase = "/customers";
+    public static final String  PackageBase = "/packages";
 
     ///
     // DO
@@ -18,7 +19,7 @@ public class ConfigurationSet {
     ///
     // GET
     ///
-    private static final String Packages = "/packages";
+    private static final String Packages = "/getallpackages";
     private static final String Package_ = "/getpackage/";
     private static final String Bookings_ = "/mybookings/";
     private static final String BookingsWPackage_ = "/get_my_bookings/";
@@ -43,7 +44,7 @@ public class ConfigurationSet {
     }
 
     public static String getRESTPackages() {
-        return HTTP + IP + RESTUrl + CustomerBase + Packages;
+        return HTTP + IP + RESTUrl + PackageBase + Packages;
     }
 
     public static String getRESTBookings() {
