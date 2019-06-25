@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
 import com.erict135.oosdteam4workshop8.model.Customer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 
@@ -91,7 +93,7 @@ public class RegisterActivity extends Activity {
                     Log.i("RegisterActivity", "btnSignup clicked");
                     Customer c = new Customer();
 
-                    c.setCustomerId(0);
+                    c.setCustomerId(0); // zero-value provided for a customer create
                     c.setCustFirstName(etCustFirstName.getText().toString());
                     c.setCustLastName(etCustLastName.getText().toString());
                     c.setCustAddress(etCustAddress.getText().toString());
@@ -105,7 +107,7 @@ public class RegisterActivity extends Activity {
                     c.setCustEmail(etCustEmail.getText().toString());
                     c.setPassword(etCustPassword.getText().toString());
                     c.setUserName(etCustEmail.getText().toString());
-                    c.setAgentId(1);
+                    c.setAgentId(null); // negative value flags REST Service to handle as a null value
 
                     new RegisterCustomer(c).execute();
                 //}
@@ -126,6 +128,7 @@ public class RegisterActivity extends Activity {
         if(etCustEmail.getText().toString()==etEmailConfirm.getText().toString()){return false;}
         return true;
     }
+
     class RegisterCustomer extends AsyncTask<Void, Void, Void> {
         private Customer c;
         private int responsecode;
@@ -136,7 +139,19 @@ public class RegisterActivity extends Activity {
         protected Void doInBackground(Void... params) {
             try {
                 Type type = new TypeToken<Customer>(){}.getType();
-                String JSONout = new Gson().toJson(c,type);
+
+                // test the following GsonBuilder code to permit null transport
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                gsonBuilder.serializeNulls();
+                Gson gson = gsonBuilder.create();
+
+                //String JSONout = new Gson().toJson(c,type);
+                String JSONout = gson.toJson(c,type);
+
+                JsonObject convertedObject = new Gson().fromJson(JSONout, JsonObject.class);
+                convertedObject.remove("TOKEN");
+
+                String JSONout2 = convertedObject.toString();
 
                 //URL url = new URL(CUSTOMERREGISTERURL);
                 URL url = new URL("http:10.163.112.8:8080/Team4API/rest/customers/putcustomer");
@@ -147,7 +162,7 @@ public class RegisterActivity extends Activity {
                 urlConnection.connect();
 
                 OutputStreamWriter out = new OutputStreamWriter(urlConnection.getOutputStream());
-                out.write(JSONout);
+                out.write(JSONout2);
                 out.close();
 
                 responsecode = urlConnection.getResponseCode();

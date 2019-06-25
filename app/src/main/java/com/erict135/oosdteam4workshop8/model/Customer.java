@@ -14,7 +14,7 @@ public class Customer {
     private String custHomePhone;
     private String custBusPhone;
     private String custEmail;
-    private int agentId;
+    private Integer agentId;
     private String password;
     private String userName;
 
@@ -120,11 +120,11 @@ public class Customer {
         this.custEmail = custEmail;
     }
 
-    public int getAgentId() {
+    public Integer getAgentId() {
         return agentId;
     }
 
-    public void setAgentId(int agentId) {
+    public void setAgentId(Integer agentId) {
         this.agentId = agentId;
     }
 
