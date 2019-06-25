@@ -87,6 +87,8 @@ public class RegisterActivity extends Activity {
             public void onClick(View v) {
                 if(Validate()){
                     Customer c = new Customer();
+
+                    c.setCustomerId(0);
                     c.setCustFirstName(etCustFirstName.getText().toString());
                     c.setCustLastName(etCustLastName.getText().toString());
                     c.setCustAddress(etCustAddress.getText().toString());
@@ -98,7 +100,9 @@ public class RegisterActivity extends Activity {
                     c.setCustBusPhone(etCustBusPhone.getText().toString());
 
                     c.setCustEmail(etCustEmail.getText().toString());
-                    c.setCustPassword(etCustPassword.getText().toString());
+                    c.setPassword(etCustPassword.getText().toString());
+                    c.setUserName(etCustEmail.getText().toString());
+                    c.setAgentId(0);
 
                     new RegisterCustomer(c).execute();
                 }
