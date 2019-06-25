@@ -15,7 +15,8 @@ public class Customer {
     private String custBusPhone;
     private String custEmail;
     private int agentId;
-    private String custPassword;
+    private String password;
+    private String userName;
 
     public String getTOKEN() {
         return TOKEN;
@@ -26,14 +27,6 @@ public class Customer {
     }
 
     private String TOKEN;
-
-    public String getCustPassword() {
-        return custPassword;
-    }
-
-    public void setCustPassword(String custPassword) {
-        this.custPassword = custPassword;
-    }
 
     public String getFullAddress() {
         return custAddress + " " + custCity + " " + custProv + " " + custPostal;
@@ -135,4 +128,19 @@ public class Customer {
         this.agentId = agentId;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }
