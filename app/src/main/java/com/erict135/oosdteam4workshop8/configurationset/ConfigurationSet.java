@@ -2,27 +2,26 @@ package com.erict135.oosdteam4workshop8.configurationset;
 
 public class ConfigurationSet {
     private static final String HTTP = "http://";
-    private static final String IP = "10.187.200.193";
-//    private static final String IP = "192.168.0.12";
-    private static final String RESTUrl = ":8080/travelexpertsREST/rs";
+    private static final String IP = "10.0.2.2";
+    private static final String RESTUrl = ":8080/Team4API/rest";
 
-    private static final String CustomerBase = "/cust";
+    private static final String CustomerBase = "/customers";
 
     ///
     // DO
     ///
     private static final String CustomerLogin = "/login";
-    private static final String CustomerRegister = "/registercustomer";
-    private static final String CustomerCreateBooking = "/createbooking";
+    private static final String CustomerRegister = "/register_customer";
+    private static final String CustomerCreateBooking = "/create_booking";
     private static final String CustomerUpdate = "/update";
-    private static final String CustomerAssignAgent = "/assignagent";
+    private static final String CustomerAssignAgent = "/assignagent2cust";
     ///
     // GET
     ///
-    private static final String Packages = "/getpackages";
+    private static final String Packages = "/packages";
     private static final String Package_ = "/getpackage/";
     private static final String Bookings_ = "/mybookings/";
-    private static final String BookingsWPackage_ = "/mybookingWpackages/";
+    private static final String BookingsWPackage_ = "/get_my_bookings/";
 
     public static final int TravelerGroupCount = 4;
 
@@ -47,7 +46,7 @@ public class ConfigurationSet {
         return HTTP + IP + RESTUrl + CustomerBase + Packages;
     }
 
-    public static String getRESTBookings_() {
+    public static String getRESTBookings() {
         return HTTP + IP + RESTUrl + CustomerBase + Bookings_;
     }
 
@@ -55,7 +54,7 @@ public class ConfigurationSet {
         return HTTP + IP + RESTUrl + CustomerBase + BookingsWPackage_;
     }
 
-    public static String getRESTPackage_() {
+    public static String getRESTPackage() {
         return HTTP + IP + RESTUrl + CustomerBase + Package_;
     }
 

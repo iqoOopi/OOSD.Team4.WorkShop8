@@ -63,7 +63,7 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        setupUI(findViewById(R.id.login_activity));
+        setupUI(findViewById(R.id.register_activity));
 
         etCustFirstName=(EditText)findViewById(R.id.etCustFirstName);
         etCustLastName=(EditText)findViewById(R.id.etCustLastName);
