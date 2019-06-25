@@ -153,8 +153,8 @@ public class RegisterActivity extends Activity {
 
                 String JSONout2 = convertedObject.toString();
 
-                //URL url = new URL(CUSTOMERREGISTERURL);
-                URL url = new URL("http:10.163.112.8:8080/Team4API/rest/customers/putcustomer");
+                URL url = new URL(CUSTOMERREGISTERURL);
+//                URL url = new URL("http:10.163.112.8:8080/Team4API/rest/customers/putcustomer");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("PUT");
                 urlConnection.setRequestProperty("Content-Type", "application/json");

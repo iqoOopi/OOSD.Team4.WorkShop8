@@ -12,7 +12,7 @@ public class ConfigurationSet {
     // DO
     ///
     private static final String CustomerLogin = "/login";
-    private static final String CustomerRegister = "/register_customer";
+    private static final String CustomerRegister = "/putcustomer";
     private static final String CustomerCreateBooking = "/create_booking";
     private static final String CustomerUpdate = "/update";
     private static final String CustomerAssignAgent = "/assignagent2cust";
