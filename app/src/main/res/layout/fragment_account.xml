@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:text="Account Information"
             android:textColor="#FFFFFF"
@@ -24,34 +24,35 @@
 
         <LinearLayout
             android:id="@+id/llAGENTID"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:background="#9E040305"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="25dp"
+            android:background="#9E040305"
+            android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="Your agent:"
-                android:textColor="@android:color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textColor="@android:color/white" />
+
             <TextView
-                android:text="AGTID"
                 android:id="@+id/tvAgentId"
-                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="AGTID"
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="688dp"
+        android:layout_height="657dp"
         android:fillViewport="true">
 
         <LinearLayout
@@ -489,7 +490,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/bg_button"
             android:drawableRight="@drawable/cancel"
