@@ -4,149 +4,164 @@
     android:id="@+id/BookingElement"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="@dimen/activity_vertical_margin"
-    app:cardElevation="@dimen/activity_vertical_margin"
-    android:layout_margin="15dp">
+    app:cardElevation="@dimen/activity_vertical_margin">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
+        android:id="@+id/rlBookingRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple"
-        android:padding="20dp"
-        android:id="@+id/rlBookingRow">
+        android:layout_marginBottom="10dp"
+        android:background="#0B1E30"
+        android:padding="20dp">
 
         <TextView
-            android:layout_alignParentLeft="true"
-            android:textColor="@android:color/white"
-            android:layout_alignParentTop="true"
-            android:text="Booking #: "
             android:id="@+id/tvbookingNo_LABEL"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/tvbookingNo"
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
-            android:layout_toRightOf="@id/tvbookingNo_LABEL"
-            android:layout_alignBaseline="@id/tvbookingNo_LABEL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bookingNo" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Booking #: "
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:text="Date Booked: "
-            android:textSize="20dp"
+            android:id="@+id/tvbookingNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvbookingNo_LABEL"
+            android:layout_toRightOf="@id/tvbookingNo_LABEL"
+            android:text="bookingNo"
             android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/tvbookingDate_LABEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tvbookingNo_LABEL"
             android:layout_alignParentLeft="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
+            android:text="Date Booked: "
             android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:layout_toRightOf="@id/tvbookingDate_LABEL"
-            android:layout_alignBaseline="@id/tvbookingDate_LABEL"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/tvbookingDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bookingDate" />
+            android:layout_alignBaseline="@id/tvbookingDate_LABEL"
+            android:layout_toRightOf="@id/tvbookingDate_LABEL"
+            android:text="bookingDate"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
+            android:id="@+id/tvtravelerCount_LABEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tvbookingDate_LABEL"
             android:layout_alignParentLeft="true"
-            android:id="@+id/tvtravelerCount_LABEL"
             android:text="Traveler Count: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:layout_alignBaseline="@id/tvtravelerCount_LABEL"
-            android:layout_toRightOf="@id/tvtravelerCount_LABEL"
             android:id="@+id/tvtravelerCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="travelerCount" />
+            android:layout_alignBaseline="@id/tvtravelerCount_LABEL"
+            android:layout_toRightOf="@id/tvtravelerCount_LABEL"
+            android:text="travelerCount"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tvtravelerCount_LABEL"
             android:id="@+id/tvtripTypeId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tripTypeId" />
+            android:layout_below="@id/tvtravelerCount_LABEL"
+            android:layout_centerHorizontal="true"
+            android:text="tripTypeId"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
             android:id="@+id/tvDetails_LABEL"
-            android:text="Details:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvtripTypeId"
             android:layout_alignParentLeft="true"
             android:paddingTop="20dp"
             android:paddingBottom="10dp"
-            android:layout_below="@id/tvtripTypeId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="Details:"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
             android:id="@+id/tvpkgName_DETAILS"
-            android:layout_below="@id/tvDetails_LABEL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tvDetails_LABEL"
+            android:layout_alignParentLeft="true"
             android:text="tvpkgName_DETAILS"
-            android:layout_alignParentLeft="true"/>
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
-            android:text="tvpkgDesc_DETAILS"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@id/tvpkgName_DETAILS"
             android:id="@+id/tvpkgDesc_DETAILS"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvpkgName_DETAILS"
+            android:layout_alignParentLeft="true"
+            android:text="tvpkgDesc_DETAILS"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
+            android:id="@+id/tvpkgDuration_DETAILS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tvpkgDesc_DETAILS"
             android:layout_alignParentLeft="true"
-            android:id="@+id/tvpkgDuration_DETAILS"
             android:text="tvpkgDuration_DETAILS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
+            android:id="@+id/tvpkgBasePrice_DETAILS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tvpkgDuration_DETAILS"
             android:layout_alignParentRight="true"
-            android:id="@+id/tvpkgBasePrice_DETAILS"
             android:text="tvpkgBasePrice_DETAILS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
 
         <TextView
-            android:textSize="20dp"
-            android:layout_alignBaseline="@id/tvpkgBasePrice_DETAILS"
-            android:text="Total charge: "
-            android:layout_toLeftOf="@id/tvpkgBasePrice_DETAILS"
-            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tvpkgBasePrice_DETAILS"
+            android:layout_toLeftOf="@id/tvpkgBasePrice_DETAILS"
+            android:text="Total charge: "
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="76dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="485dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/add_trip" />
 
     </RelativeLayout>
 

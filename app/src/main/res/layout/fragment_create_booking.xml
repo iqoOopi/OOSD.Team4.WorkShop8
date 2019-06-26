@@ -5,147 +5,158 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/tvTitleConfirmBooking"
-        android:text="Booking Confirmation"
-        android:textSize="20dp"
-        android:gravity="center_horizontal"
-        android:textColor="@android:color/white"
-        android:background="@drawable/container_blue"
-        android:padding="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="0dp">
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/ivPreviewConfirmBooking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvTitleConfirmBooking"/>
-
-    <TextView
-        android:layout_below="@id/ivPreviewConfirmBooking"
-        android:layout_alignParentLeft="true"
-        android:padding="10dp"
-        android:textSize="20dp"
-        android:id="@+id/tvpkgName_booking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pkgName"/>
-
-    <TextView
-        android:padding="10dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/tvpkgName_booking"
-        android:id="@+id/tvpkgDesc_booking"
-        android:textSize="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pkgDesc"/>
-
-    <TextView
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/tvpkgDesc_booking"
-        android:padding="10dp"
-        android:textSize="20dp"
-        android:id="@+id/tvpkgDuration_booking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pkgDuration"/>
-
-    <TextView
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/tvpkgDuration_booking"
-        android:padding="10dp"
-        android:textSize="20dp"
-        android:id="@+id/tvpkgBasePrice_booking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pkgBasePrice"/>
-
-    <LinearLayout
-        android:id="@+id/llTravelerCount"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="15dp"
-        android:layout_below="@id/tvpkgBasePrice_booking"
-        android:layout_centerHorizontal="true">
         <TextView
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvTitleConfirmBooking"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="# Travelers: "/>
-        <EditText
-            android:textSize="20dp"
-            android:id="@+id/ettravelerCount"
-            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#000000"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:text="Booking Confirmation"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/ivPreviewConfirmBooking"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1"
-            android:inputType="number"/>
+            android:layout_below="@id/tvTitleConfirmBooking"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/tvpkgName_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivPreviewConfirmBooking"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:text="pkgName"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvpkgDesc_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvpkgName_booking"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:text="pkgDesc"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvpkgDuration_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvpkgDesc_booking"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:text="pkgDuration"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvpkgBasePrice_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvpkgDuration_booking"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:text="pkgBasePrice"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:id="@+id/llTravelerCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvpkgBasePrice_booking"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# Travelers: "
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ettravelerCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="1"
+                android:textSize="20dp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <ImageView
-                    android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
                     android:id="@+id/ivTravelerCountIncrease"
                     android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
                 <ImageView
-                    android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
                     android:id="@+id/ivTravelerCountDecrease"
                     android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
             </LinearLayout>
         </LinearLayout>
 
-    <Spinner
-        android:id="@+id/sptripTypeId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/llTravelerCount"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="20dp"
-        android:spinnerMode="dialog" />
+        <Spinner
+            android:id="@+id/sptripTypeId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llTravelerCount"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"
+            android:spinnerMode="dialog" />
 
-    <Button
-        android:textSize="20dp"
-        android:layout_below="@id/sptripTypeId"
-        android:layout_alignParentLeft="true"
-        android:text="Go back"
-        android:padding="10dp"
-        android:textColor="@android:color/white"
-        android:id="@+id/btnBack_CreateBooking"
-        android:background="@drawable/container_red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/container_green"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/sptripTypeId"
-        android:layout_marginRight="20dp"
-        android:id="@+id/btnConfirmBooking"
-        android:text="Book Now!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"/>
+        <Button
+            android:id="@+id/btnBack_CreateBooking"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sptripTypeId"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/cancel"
+            android:paddingLeft="20dp"
+            android:text="@android:string/cancel"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnConfirmBooking"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sptripTypeId"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/bg_button"
+            android:padding="10dp"
+            android:paddingLeft="30dp"
+            android:text="Add Trip"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/add_trip"/>
 
     </RelativeLayout>
 </ScrollView>
