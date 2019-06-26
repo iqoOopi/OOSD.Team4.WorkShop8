@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">TravelExperts</string>
-    <string name="title_activity_main">TravelExperts</string>
+    <string name="app_name"></string>
+    <string name="title_activity_main"></string>
 
     <string name="title_home">Home</string>
     <string name="title_browse">Browse packages</string>
     <string name="title_booking">My bookings</string>
     <string name="title_account">Account settings</string>
     <string name="title_logout">Logout</string>
-    <string name="title_login">Login</string>
+    <string name="title_login">Sign In</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
