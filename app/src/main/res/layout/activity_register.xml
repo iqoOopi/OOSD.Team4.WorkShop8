@@ -6,58 +6,70 @@
     android:layout_height="match_parent"
     android:id="@+id/register_activity"
     tools:context="com.erict135.oosdteam4workshop8.RegisterActivity"
-    android:background="@drawable/login_bg_img"
+    android:background="@drawable/register_img"
     >
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="564dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/travelexperts_logo_white" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:windowSoftInputMode="adjustPan">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <ScrollView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/labelTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:text="Create An Account"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="151dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/travelexperts_logo_white" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="688dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"
+                android:background="#E2070F1B"
                 android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"
-                android:paddingEnd="45dp">
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/labelContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Tell Us About You"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/labelFN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="First Name:"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/etCustFirstName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNAME_LABEL"
-                    android:layout_centerHorizontal="true"
-                    android:hint="FIRST NAME"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
-
-                <TextView
-                    android:id="@+id/labelLN"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Last Name:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustLastName"
@@ -65,77 +77,47 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
-                    android:hint="FIRST NAME"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Your First Name"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
-                    android:id="@+id/labelemail"
+                    android:id="@+id/labelLN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email:"
-                    android:textColor="#000000" />
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Last Name:"
+                    android:textColor="#FFFFFF" />
 
                 <EditText
-                    android:id="@+id/etCustEmail"
+                    android:id="@+id/etCustFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
-                    android:hint="Email"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
-
-                <EditText
-                    android:id="@+id/etEmailConfirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNAME_LABEL"
-                    android:layout_centerHorizontal="true"
-                    android:hint="Confirm-Email"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
-
-                <TextView
-                    android:id="@+id/labelBusPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Business Phone:"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/etCustBusPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNAME_LABEL"
-                    android:layout_centerHorizontal="true"
-                    android:hint="Business Phone"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
-
-                <TextView
-                    android:id="@+id/labelHoPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Home Phone:"
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:id="@+id/etCustHomePhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNAME_LABEL"
-                    android:layout_centerHorizontal="true"
-                    android:hint="Home Phone"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Your Last Name"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="Home Address:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustAddress"
@@ -143,16 +125,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Home Address"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="City:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustCity"
@@ -160,16 +149,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="City"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelProvince"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="Province:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustProv"
@@ -177,16 +173,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Province"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelPostal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="Postal Code:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustPostal"
@@ -194,16 +197,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Postal Code"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="Country:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustCountry"
@@ -211,16 +221,154 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Country"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelIndicate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="40dp"
+                    android:drawableLeft="@drawable/swipe_left"
+                    android:text="Swipe Left"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#E2070F1B"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/labelContactInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Your Contact Information"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/labelHoPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Home Phone:"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/etCustHomePhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Home Phone"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelBusPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Business Phone:"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/etCustBusPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Business Phone"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelAuth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Your Account Infomation"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/labelemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Email:"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/etCustEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Email"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
+
+                <EditText
+                    android:id="@+id/etEmailConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="Confirm-Email"
+                    android:paddingLeft="30dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <TextView
                     android:id="@+id/labelPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
                     android:text="Password:"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
                 <EditText
                     android:id="@+id/etCustPassword"
@@ -228,10 +376,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Password"
+                    android:paddingLeft="30dp"
                     android:password="true"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
 
                 <EditText
                     android:id="@+id/etPasswordConfirm"
@@ -239,32 +391,60 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvNAME_LABEL"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/white"
                     android:hint="Password-Confirm"
+                    android:paddingLeft="30dp"
                     android:password="true"
-                    android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelIndicateRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="60dp"
+                    android:drawableRight="@drawable/swipe_right"
+                    android:text="Swipe Right"
+                    android:textColor="#FFFFFF" />
+
             </LinearLayout>
-        </ScrollView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bg_button"
+            android:drawableRight="@drawable/backpack"
+            android:paddingLeft="180dp"
+            android:paddingRight="200dp"
+            android:text="Sign Up"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/labelCancelRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="I Have An Account"
+            android:textAlignment="center"
+            android:textColor="#FF0000" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnSignup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:background="#9BFF9D"
-        android:text="Sign Up" />
-
-    <Button
-        android:id="@+id/btnCancelRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="#F86060"
-        android:text="@android:string/cancel" />
 
 </LinearLayout>

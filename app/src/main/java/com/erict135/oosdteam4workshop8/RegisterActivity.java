@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.erict135.oosdteam4workshop8.configurationset.ConfigurationSet;
@@ -28,7 +29,8 @@ import java.net.URL;
 
 public class RegisterActivity extends Activity {
 
-    Button btnSignup,btnCancelRegister;
+    Button btnSignup;
+    TextView labelCancelRegister;
     EditText etCustFirstName,etCustLastName,etCustAddress,etCustProv,etCustPostal,etCustCity,etCustCountry,etCustEmail,etCustBusPhone,etCustHomePhone,etCustPassword,etPasswordConfirm,etEmailConfirm;
 
     private static final String CUSTOMERREGISTERURL = ConfigurationSet.getRESTCustomerRegisterURL();
@@ -114,8 +116,8 @@ public class RegisterActivity extends Activity {
             }
         });
 
-        btnCancelRegister=(Button)findViewById(R.id.btnCancelRegister);
-        btnCancelRegister.setOnClickListener(new View.OnClickListener() {
+        labelCancelRegister=(TextView)findViewById(R.id.labelCancelRegister);
+        labelCancelRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setResult(RESULT_CANCELED,new Intent());
