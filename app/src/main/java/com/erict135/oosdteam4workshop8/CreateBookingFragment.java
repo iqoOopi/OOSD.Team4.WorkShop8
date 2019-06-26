@@ -3,6 +3,7 @@ package com.erict135.oosdteam4workshop8;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -193,8 +194,11 @@ public class CreateBookingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
+
+//                Intent myIntent = new Intent(getContext(), MainActivity.class);
+//                startActivity(myIntent);
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container_browse, BrowseFragment.getInstance())
+                        .replace(R.id.fragment_container, BrowseFragment.getInstance())
                         .commit();
             }
         });
@@ -241,7 +245,7 @@ public class CreateBookingFragment extends Fragment {
                 Toast.makeText(getContext(),"You've booked your trip!", Toast.LENGTH_SHORT).show();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container_browse,HomeFragment.newInstance(customerid,customer))
+                        .replace(R.id.fragment_container,HomeFragment.newInstance(customerid,customer))
                         .commit();
             }
         }
