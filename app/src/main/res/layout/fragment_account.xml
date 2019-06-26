@@ -1,246 +1,513 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:src="@drawable/ic_edit_black_24dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ivEditCustomer"/>
-    <ImageView
-        android:layout_toRightOf="@id/ivEditCustomer"
-        android:layout_marginLeft="10dp"
-        android:layout_alignParentTop="true"
-        android:id="@+id/ivSaveCustomer"
-        android:src="@drawable/ic_save_black_24dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:background="@drawable/register_img"
+    >
     <LinearLayout
-        android:id="@+id/llAGENTID"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/container_gray"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
-    <TextView
-        android:paddingRight="10dp"
-        android:text="Your agent:"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="AGTID"
-        android:id="@+id/tvAgentId"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/labelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:text="Account Information"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:id="@+id/llAGENTID"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="#9E040305"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            android:padding="10dp">
+
+            <TextView
+                android:paddingRight="10dp"
+                android:text="Your agent:"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="AGTID"
+                android:id="@+id/tvAgentId"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
+    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_below="@id/llAGENTID"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/rlNAME"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/container_blue">
-    <TextView
-        android:textSize="15dp"
-        android:textColor="@android:color/white"
-        android:id="@+id/tvNAME_LABEL"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NAME"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:paddingTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvNAME_LABEL"
-        android:id="@+id/etCustFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:paddingTop="15dp"
-        android:id="@+id/etCustLastName"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/etCustFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-        </RelativeLayout>
+        android:layout_height="688dp"
+        android:fillViewport="true">
 
-    <RelativeLayout
-        android:layout_marginTop="15dp"
-        android:padding="20dp"
-        android:id="@+id/rlCONTACT"
-        android:layout_below="@id/rlNAME"
-        android:background="@drawable/container_green"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <TextView
-        android:textColor="@android:color/white"
-        android:paddingTop="20dp"
-        android:textSize="15dp"
-        android:text="CONTACT"
-        android:id="@+id/tvCONTACT_LABEL"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:textColor="@android:color/white"
-        android:paddingTop="20dp"
-        android:hint="Email address"
-        android:layout_below="@id/tvCONTACT_LABEL"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/etCustEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-    <TextView
-        android:textColor="@android:color/white"
-        android:layout_alignParentLeft="true"
-        android:layout_alignBaseline="@+id/etCustBusPhone"
-        android:text="Work #:"
-        android:id="@+id/tvBUSPHONE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:textColor="@android:color/white"
-        android:paddingTop="20dp"
-        android:id="@id/etCustBusPhone"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/etCustEmail"
-        android:minEms="11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
+            <LinearLayout
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
 
-    <TextView
-        android:textColor="@android:color/white"
-        android:text="Home #:"
-        android:layout_alignParentLeft="true"
-        android:layout_alignBaseline="@+id/etCustHomePhone"
-        android:id="@+id/tvHOMEPHONE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:textColor="@android:color/white"
-        android:layout_below="@id/etCustBusPhone"
-        android:paddingTop="15dp"
-        android:layout_alignParentRight="true"
-        android:id="@id/etCustHomePhone"
-        android:minEms="11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/ivEditCustomer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="50dp"
+                        android:src="@drawable/ic_edit_black_24dp" />
 
-    <!--ADDRESS-->
-    <RelativeLayout
-        android:layout_marginTop="15dp"
-        android:padding="20dp"
-        android:id="@+id/rlADDRESS"
-        android:layout_below="@id/rlCONTACT"
-        android:background="@drawable/container_red"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivSaveCustomer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/ivEditCustomer"
+                        android:src="@drawable/ic_save_black_24dp" />
 
-    <TextView
-        android:id="@+id/tvADDRESS_LABEL"
-        android:textSize="15dp"
-        android:textColor="@android:color/white"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:paddingTop="20dp"
-        android:text="ADDRESS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:paddingTop="20dp"
-        android:hint="Street address"
-        android:textColor="@android:color/white"
+                    <TextView
+                        android:id="@+id/labelContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="Address Information"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/labelFN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="First Name:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Your First Name"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelLN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Last Name:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Your Last Name"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Home Address:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Home Address"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="City:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="City"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Province:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustProv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Province"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelPostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Postal Code:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustPostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Postal Code"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Country:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Country"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelIndicate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="40dp"
+                    android:drawableLeft="@drawable/swipe_left"
+                    android:text="Swipe Left"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="500dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivEditCustomer2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="50dp"
+                        android:src="@drawable/ic_edit_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/ivSaveCustomer2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/ivEditCustomer"
+                        android:src="@drawable/ic_save_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/labelContactInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="Contact Information"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/labelHoPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Home Phone:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustHomePhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Home Phone"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelBusPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Business Phone:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustBusPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Business Phone"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelAuth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Login Infomation"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/labelemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Email:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Email"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <EditText
+                    android:id="@+id/etEmailConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Confirm-Email"
+                    android:paddingLeft="30dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:text="Password:"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/etCustPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Password"
+                    android:paddingLeft="30dp"
+                    android:password="true"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <EditText
+                    android:id="@+id/etPasswordConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNAME_LABEL"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:backgroundTint="@android:color/black"
+                    android:hint="Password-Confirm"
+                    android:paddingLeft="30dp"
+                    android:password="true"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0" />
+
+                <TextView
+                    android:id="@+id/labelIndicateRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="60dp"
+                    android:drawableRight="@drawable/swipe_right"
+                    android:text="Swipe Right"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etCustAddress"
-        android:layout_below="@id/tvADDRESS_LABEL"
-        android:layout_centerHorizontal="true"
-        android:enabled="false"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:layout_below="@id/etCustAddress"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:id="@+id/etCustCity"
-        android:hint="City"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:id="@+id/etCustProv"
-        android:layout_below="@id/etCustCity"
-        android:paddingTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:hint="Prov./State Code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:layout_below="@id/etCustProv"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:hint="Postal/ZIP"
-        android:id="@+id/etCustPostal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-    <EditText
-        android:textColor="@android:color/white"
-        android:layout_below="@id/etCustPostal"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="15dp"
-        android:hint="Country"
-        android:id="@+id/etCustCountry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"/>
-        </RelativeLayout>
-    <TextView
-        android:layout_marginTop="15dp"
-        android:padding="10dp"
-        android:textSize="25dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/container_purple"
-        android:layout_below="@id/rlADDRESS"
-        android:layout_alignParentRight="true"
-        android:text="TAP HERE TO CONNECT TO AGENT"
-        android:id="@+id/tvTapForAgent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
-</ScrollView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnCancelEditCust"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/bg_button"
+            android:drawableRight="@drawable/cancel"
+            android:paddingLeft="180dp"
+            android:paddingRight="200dp"
+            android:text="Cancel"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvTapForAgent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Let Me Connect To My Agent"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+</LinearLayout>

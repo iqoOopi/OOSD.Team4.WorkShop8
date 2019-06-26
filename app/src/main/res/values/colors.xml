@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorYellow">#DDDD00</color>
-    <color name="cardview_light_background">#101538</color>
+    <color name="cardview_light_background">#303F9F</color>
 </resources>
