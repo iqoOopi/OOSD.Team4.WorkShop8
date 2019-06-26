@@ -126,6 +126,8 @@ public class CreateBookingFragment extends Fragment {
 //        adapter.setDropDownViewResource(R.layout.spinner_item);
         sptripTypeId.setAdapter(adapter);
         sptripTypeId.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        //init value for travelerCount
+        travelerCount = 1;
         ettravelerCount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
