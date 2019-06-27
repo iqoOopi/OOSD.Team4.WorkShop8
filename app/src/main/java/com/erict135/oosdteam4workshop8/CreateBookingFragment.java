@@ -194,9 +194,6 @@ public class CreateBookingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
-
-//                Intent myIntent = new Intent(getContext(), MainActivity.class);
-//                startActivity(myIntent);
                 fragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, BrowseFragment.getInstance())
                         .commit();

@@ -2,6 +2,7 @@ package com.erict135.oosdteam4workshop8;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +39,7 @@ public class AccountFragment extends Fragment {
     private EditText etCustEmail,etCustBusPhone,etCustHomePhone;
     private TextView tvTapForAgent;
     private ImageView ivEditCustomer,ivSaveCustomer,ivEditCustomer2,ivSaveCustomer2;
+    private Button btnCancelEditCust;
 
     private static Customer c;
     private static AccountFragment accountFragment;
@@ -49,6 +52,7 @@ public class AccountFragment extends Fragment {
 
     public AccountFragment() {
     }
+
 
     public static AccountFragment newInstance(int sectionNumber, Customer customer) {
         accountFragment= new AccountFragment();
@@ -165,6 +169,8 @@ public class AccountFragment extends Fragment {
             }
         });
 
+        btnCancelEditCust=(Button)rootView.findViewById(R.id.btnCancelEditCust);
+
 
 
         tvAgentId.setText(String.valueOf(c.getAgentId()));
@@ -178,6 +184,18 @@ public class AccountFragment extends Fragment {
         etCustEmail.setText(c.getCustEmail());
         etCustBusPhone.setText(c.getCustBusPhone());
         etCustHomePhone.setText(c.getCustHomePhone());
+
+
+        btnCancelEditCust.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, HomeFragment.getInstance())
+                        .commit();
+            }
+        });
+
 
         if(c.getAgentId()==0){
             tvTapForAgent.setOnClickListener(new View.OnClickListener() {

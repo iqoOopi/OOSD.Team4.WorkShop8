@@ -2,7 +2,7 @@ package com.erict135.oosdteam4workshop8.configurationset;
 
 public class ConfigurationSet {
     private static final String HTTP = "http://";
-    private static final String IP = "10.163.112.148";
+    private static final String IP = "192.168.0.19";
     private static final String RESTUrl = ":8080/Team4API/rest";
 
     private static final String CustomerBase = "/customers";
