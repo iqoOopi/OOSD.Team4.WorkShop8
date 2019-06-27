@@ -109,7 +109,7 @@ public class RegisterActivity extends Activity {
                     c.setCustEmail(etCustEmail.getText().toString());
                     c.setPassword(etCustPassword.getText().toString());
                     c.setUserName(etCustEmail.getText().toString());
-                    c.setAgentId(null); // negative value flags REST Service to handle as a null value
+                    c.setAgentId(0); // negative value flags REST Service to handle as a null value
 
                     new RegisterCustomer(c).execute();
                 //}

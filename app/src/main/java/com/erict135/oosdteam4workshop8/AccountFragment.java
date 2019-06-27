@@ -36,7 +36,7 @@ public class AccountFragment extends Fragment {
     private EditText etCustFirstName,etCustLastName,etCustAddress,etCustCity,etCustProv,etCustCountry,etCustPostal;
     private EditText etCustEmail,etCustBusPhone,etCustHomePhone;
     private TextView tvTapForAgent;
-    private ImageView ivEditCustomer,ivSaveCustomer;
+    private ImageView ivEditCustomer,ivSaveCustomer,ivEditCustomer2,ivSaveCustomer2;
 
     private static Customer c;
     private static AccountFragment accountFragment;
@@ -57,6 +57,63 @@ public class AccountFragment extends Fragment {
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         accountFragment.setArguments(args);
         return accountFragment;
+    }
+
+    private void saveCustomer(){
+        ivEditCustomer.setBackgroundColor(Color.argb(0,50,50,50));
+        ivEditCustomer.setEnabled(true);
+        ivSaveCustomer.setEnabled(false);
+
+        ivEditCustomer2.setBackgroundColor(Color.argb(0,50,50,50));
+        ivEditCustomer2.setEnabled(true);
+        ivSaveCustomer2.setEnabled(false);
+
+        Customer cUPDATE = new Customer();
+        cUPDATE.setCustomerId(c.getCustomerId());
+        cUPDATE.setAgentId(c.getAgentId());
+        cUPDATE.setCustFirstName(etCustFirstName.getText().toString());
+        cUPDATE.setCustLastName(etCustLastName.getText().toString());
+        cUPDATE.setCustAddress(etCustAddress.getText().toString());
+        cUPDATE.setCustCity(etCustCity.getText().toString());
+        cUPDATE.setCustProv(etCustProv.getText().toString());
+        cUPDATE.setCustCountry(etCustCountry.getText().toString());
+        cUPDATE.setCustPostal(etCustPostal.getText().toString());
+        cUPDATE.setCustHomePhone(etCustHomePhone.getText().toString());
+        cUPDATE.setCustBusPhone(etCustBusPhone.getText().toString());
+        cUPDATE.setCustEmail(etCustEmail.getText().toString());
+
+        new updateCustomer(cUPDATE).execute();
+
+        etCustFirstName.setEnabled(false);
+        etCustLastName.setEnabled(false);
+        etCustAddress.setEnabled(false);
+        etCustCity.setEnabled(false);
+        etCustProv.setEnabled(false);
+        etCustCountry.setEnabled(false);
+        etCustPostal.setEnabled(false);
+        etCustEmail.setEnabled(false);
+        etCustBusPhone.setEnabled(false);
+        etCustHomePhone.setEnabled(false);
+    }
+    private void enableEdit(){
+        ivEditCustomer.setBackgroundColor(Color.argb(100,50,50,50));
+        ivSaveCustomer.setEnabled(true);
+        ivEditCustomer.setEnabled(false);
+
+        ivEditCustomer2.setBackgroundColor(Color.argb(100,50,50,50));
+        ivSaveCustomer2.setEnabled(true);
+        ivEditCustomer2.setEnabled(false);
+
+        etCustFirstName.setEnabled(true);
+        etCustLastName.setEnabled(true);
+        etCustAddress.setEnabled(true);
+        etCustCity.setEnabled(true);
+        etCustProv.setEnabled(true);
+        etCustCountry.setEnabled(true);
+        etCustPostal.setEnabled(true);
+        etCustEmail.setEnabled(true);
+        etCustBusPhone.setEnabled(true);
+        etCustHomePhone.setEnabled(true);
     }
 
     @Override
@@ -80,58 +137,35 @@ public class AccountFragment extends Fragment {
         ivEditCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ivEditCustomer.setBackgroundColor(Color.argb(100,50,50,50));
-                ivSaveCustomer.setEnabled(true);
-                ivEditCustomer.setEnabled(false);
-
-                etCustFirstName.setEnabled(true);
-                etCustLastName.setEnabled(true);
-                etCustAddress.setEnabled(true);
-                etCustCity.setEnabled(true);
-                etCustProv.setEnabled(true);
-                etCustCountry.setEnabled(true);
-                etCustPostal.setEnabled(true);
-                etCustEmail.setEnabled(true);
-                etCustBusPhone.setEnabled(true);
-                etCustHomePhone.setEnabled(true);
+                enableEdit();
             }
         });
+
+        ivEditCustomer2=(ImageView)rootView.findViewById(R.id.ivEditCustomer2);
+        ivEditCustomer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enableEdit();
+            }
+        });
+
         ivSaveCustomer=(ImageView)rootView.findViewById(R.id.ivSaveCustomer);
         ivSaveCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ivEditCustomer.setBackgroundColor(Color.argb(0,50,50,50));
-                ivEditCustomer.setEnabled(true);
-                ivSaveCustomer.setEnabled(false);
-
-                Customer cUPDATE = new Customer();
-                cUPDATE.setCustomerId(c.getCustomerId());
-                cUPDATE.setAgentId(c.getAgentId());
-                cUPDATE.setCustFirstName(etCustFirstName.getText().toString());
-                cUPDATE.setCustLastName(etCustLastName.getText().toString());
-                cUPDATE.setCustAddress(etCustAddress.getText().toString());
-                cUPDATE.setCustCity(etCustCity.getText().toString());
-                cUPDATE.setCustProv(etCustProv.getText().toString());
-                cUPDATE.setCustCountry(etCustCountry.getText().toString());
-                cUPDATE.setCustPostal(etCustPostal.getText().toString());
-                cUPDATE.setCustHomePhone(etCustHomePhone.getText().toString());
-                cUPDATE.setCustBusPhone(etCustBusPhone.getText().toString());
-                cUPDATE.setCustEmail(etCustEmail.getText().toString());
-
-                new updateCustomer(cUPDATE).execute();
-
-                etCustFirstName.setEnabled(false);
-                etCustLastName.setEnabled(false);
-                etCustAddress.setEnabled(false);
-                etCustCity.setEnabled(false);
-                etCustProv.setEnabled(false);
-                etCustCountry.setEnabled(false);
-                etCustPostal.setEnabled(false);
-                etCustEmail.setEnabled(false);
-                etCustBusPhone.setEnabled(false);
-                etCustHomePhone.setEnabled(false);
+                saveCustomer();
             }
         });
+
+        ivSaveCustomer2=(ImageView)rootView.findViewById(R.id.ivSaveCustomer2);
+        ivSaveCustomer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveCustomer();
+            }
+        });
+
+
 
         tvAgentId.setText(String.valueOf(c.getAgentId()));
         etCustFirstName.setText(c.getCustFirstName());
